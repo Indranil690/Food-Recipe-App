@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/white">
+
+    <!-- App Title -->
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Foodie Hub"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- Search Bar and Voice Button side by side -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:iconifiedByDefault="false"
+            android:queryHint="Search food..." />
+
+        <ImageButton
+            android:id="@+id/btnVoiceSearch"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Voice Search"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            android:src="@android:drawable/ic_btn_speak_now" />
+    </LinearLayout>
+
+    <!-- Favorites Button -->
+    <Button
+        android:id="@+id/btnViewFavorites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Favorites"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/deep_pink"
+        android:textColor="@android:color/white"/>
+
+    <!-- Horizontal Scrollable Categories -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="10dp">
+
+            <Button
+                android:id="@+id/btnAll"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="All"
+                android:padding="8dp"
+                android:textSize="12sp"
+                android:maxLines="1"
+                android:ellipsize="none"
+                android:layout_marginEnd="4dp"
+                android:backgroundTint="@color/light_maroon"
+                android:textColor="@android:color/white"/>
+
+            <Button
+                android:id="@+id/btnStarter"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="Starter"
+                android:padding="8dp"
+                android:textSize="12sp"
+                android:maxLines="1"
+                android:ellipsize="none"
+                android:layout_marginEnd="4dp"
+                android:backgroundTint="@color/light_maroon"
+                android:textColor="@android:color/white"/>
+
+            <Button
+                android:id="@+id/btnMainCourse"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="Mains"
+                android:padding="8dp"
+                android:textSize="12sp"
+                android:maxLines="1"
+                android:ellipsize="none"
+                android:layout_marginEnd="4dp"
+                android:backgroundTint="@color/light_maroon"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btnDessert"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="Dessert"
+                android:padding="8dp"
+                android:textSize="12sp"
+                android:maxLines="1"
+                android:ellipsize="none"
+                android:backgroundTint="@color/light_maroon"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
